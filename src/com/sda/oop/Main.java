@@ -17,5 +17,9 @@ public class Main {
 
         System.out.println(honda.toString());
 
+        System.out.println(honda.hashCode());
+        honda.setColor("Green");
+        System.out.println(honda.hashCode());
+
     }
 }
