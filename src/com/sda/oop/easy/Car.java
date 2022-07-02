@@ -25,4 +25,12 @@ public abstract class Car {
     public void setColor(String color){
         this.color = color;
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "vin='" + vin + '\'' +
+                ", color='" + color + '\'' +
+                '}';
+    }
 }

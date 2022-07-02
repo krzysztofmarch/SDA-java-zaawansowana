@@ -23,4 +23,13 @@ public class Honda extends Car {
     public String getModel() {
         return model;
     }
+
+    @Override
+    public String toString() {
+        return "Honda {" +
+                "model= '" + model + '\'' +
+                ", vin= '" + this.getVin() + '\'' +
+                ", color= '" + this.getColor() + '\'' +
+                "} ";
+    }
 }
