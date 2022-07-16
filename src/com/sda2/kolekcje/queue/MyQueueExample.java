@@ -1,5 +1,7 @@
 package com.sda2.kolekcje.queue;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -33,6 +35,9 @@ public class MyQueueExample {
 
 
         System.out.println("\n\nDEQUE");
+
+        Deque<String> myDeque = new ArrayDeque<>();
+
 
 
 
