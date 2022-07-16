@@ -42,10 +42,10 @@ public class MyMapExample {
         List<Integer> numbers = Arrays.asList(1, 2, 1, 3, 17, 17, 20, 11, 11, 3, 1, 1);
 
         for (Integer number : numbers) {
-            if (duplicateCounter.get(number) == null){
+            if (duplicateCounter.get(number) == null) {
                 duplicateCounter.put(number, 1);
             } else {
-                int counter = duplicateCounter.get(number) +1;
+                int counter = duplicateCounter.get(number) + 1;
                 duplicateCounter.put(number, counter);
             }
         }
@@ -71,12 +71,19 @@ public class MyMapExample {
         Map<Integer, Integer> duplicateCounter_2 = new HashMap<>();
 
         for (Integer i : numbers) {
-            duplicateCounter_2.merge(i, 1, (x, y) -> duplicateCounter_2.get(i) + 1);
+            duplicateCounter_2.merge(i, 1, Integer::sum);
         }
 
         System.out.println();
         System.out.println();
-        duplicateCounter_2.forEach((key, value) -> System.out.println("Key: " + key + ", Value: " +value));
+        duplicateCounter_2.forEach((key, value) -> System.out.println("Key: " + key + ", Value: " + value));
+
+        System.out.println();
+        Map<Integer, Integer> duplicateCounter_3 = new HashMap<>();
+        for (Integer i : numbers) {
+            duplicateCounter_3.merge(i, 1, Integer::sum);
+        }
+        duplicateCounter_3.forEach((key, value) -> System.out.println("Key: " + key + ", Value: " + value));
 
     }
 }
