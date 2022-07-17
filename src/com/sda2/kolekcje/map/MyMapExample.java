@@ -50,6 +50,8 @@ public class MyMapExample {
             }
         }
 
+
+
         System.out.println("Wypisanie");
         for (Map.Entry<Integer, Integer> pair : duplicateCounter.entrySet()) {
             System.out.println("Key: " + pair.getKey() + ", Value: " + pair.getValue());
