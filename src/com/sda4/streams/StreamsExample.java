@@ -2,6 +2,7 @@ package com.sda4.streams;
 
 import java.util.List;
 import java.util.Map;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class StreamsExample {
@@ -39,6 +40,18 @@ public class StreamsExample {
         myMap_1.forEach((k, v) -> System.out.println(k + " -> " + v));
 
 
+        System.out.println();
+        myMap_1.entrySet().stream()
+                .sorted(Map.Entry.comparingByKey())
+                .forEach(e -> System.out.println(e.getKey() + " -> " + e.getValue()));
 
+
+        System.out.println();
+        stringList.stream()
+                .collect(Collectors.toMap(String::new, String::hashCode))
+                .entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByKey())
+                .forEach(e -> System.out.println(e.getKey() + " -> " + e.getValue()));;
     }
 }
